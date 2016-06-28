@@ -42,7 +42,7 @@ namespace ServiceClient
         /// <param name="url"></param>
         /// <param name="data"></param>
         /// <returns name="StatusAndResponseClass"></returns>
-        private static async Task<StatusAndResponseClass> Request(RequestType requestType, string url, string data, Dictionary<string, string> header)
+        public static async Task<StatusAndResponseClass> Request(RequestType requestType, string url, string data, Dictionary<string, string> header)
         {
             StatusAndResponseClass getResponse = new StatusAndResponseClass();
             HttpClient client = new HttpClient();
@@ -109,7 +109,7 @@ namespace ServiceClient
         /// <param name="url"></param>
         /// <param name="data"></param>
         /// <returns name="StatusAndResponseClass"></returns>
-        private static async Task<StatusAndResponseClass> Request(RequestType requestType, string url, Dictionary<string, string> data, Dictionary<string, string> header)
+        public static async Task<StatusAndResponseClass> Request(RequestType requestType, string url, Dictionary<string, string> data, Dictionary<string, string> header)
         {
             StatusAndResponseClass getResponse = new StatusAndResponseClass();
             HttpClient client = new HttpClient();
