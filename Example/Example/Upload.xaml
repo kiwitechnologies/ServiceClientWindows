@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="Example.Upload"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Example"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+            <Button x:Name="btnBrowseFile" Content="Browse File" Click="btnBrowseFile_Click" Margin="30,0,0,0"></Button>
+            <Button x:Name="btnUploadFile" Content="Upload File" Click="btnUploadFile_Click" Margin="50,0,0,0"></Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <RadioButton GroupName="size" Content="Low" Checked="RadioButton_Checked"></RadioButton>
+            <RadioButton GroupName="size" Content="Medium" Checked="RadioButton_Checked"></RadioButton>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <RadioButton GroupName="size" Content="High" Checked="RadioButton_Checked"></RadioButton>
+            <RadioButton GroupName="size" Content="Default" Checked="RadioButton_Checked"></RadioButton>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image x:Name="imgTemp" Height="200" Width="200"></Image>
+            <Image x:Name="imgUpload" Height="200" Width="200"></Image>
+        </StackPanel>        
+        <StackPanel Orientation="Horizontal">
+            <ProgressBar x:Name="pbProgress" IsIndeterminate="False" Margin="8,20,0,0" HorizontalAlignment="Center" Width="300" VerticalAlignment="Center"/>
+            <TextBlock x:Name="tblockPercentageDownloaded" VerticalAlignment="Center" Margin="12,0,0,0" FontSize="28"/>
+        </StackPanel>
+    </StackPanel>
+</Page>
