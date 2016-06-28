@@ -1,0 +1,22 @@
+﻿{
+  "dependencies": {
+    "Facebook": "7.0.6",
+    "Facebook.Client": "1.0.4",
+    "Google.Apis.Calendar.v3": "1.13.1.529",
+    "InstaSharp": "2.0.4",
+    "linqtotwitter": "4.1.0",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
+    "Newtonsoft.Json": "8.0.3"
+  },
+  "frameworks": {
+    "uap10.0": {}
+  },
+  "runtimes": {
+    "win10-arm": {},
+    "win10-arm-aot": {},
+    "win10-x86": {},
+    "win10-x86-aot": {},
+    "win10-x64": {},
+    "win10-x64-aot": {}
+  }
+}

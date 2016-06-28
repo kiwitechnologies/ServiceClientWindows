@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="Example.TwitterUserInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Example"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:converter="using:Example.Helpers">
+
+    <Page.Resources>
+        <converter:StringLengthInvisibilityConverter x:Key="InvisibilityConverter"></converter:StringLengthInvisibilityConverter>
+    </Page.Resources>
+    <Grid x:Name="grdUserProfile" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="120"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="34" Text="User Detail"></TextBlock>
+            <Image Grid.Row="1" Height="100" Stretch="UniformToFill" Source="{Binding ProfileImageUrl}" Width="100"></Image>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2">
+                <StackPanel Orientation="Horizontal"  Visibility="{Binding Name,Converter={StaticResource InvisibilityConverter}}">
+                    <TextBlock FontSize="22" Margin="10,0,50,0"  Text="Name" >
+                    </TextBlock>
+                    <TextBlock FontSize="22" x:Name="tblUserName" Text="{Binding Name}" >
+
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding Location,Converter={StaticResource InvisibilityConverter}}">
+                    <TextBlock FontSize="22" Margin="10,0,50,0"  Text="Location" >
+                    </TextBlock>
+                    <TextBlock FontSize="22" x:Name="tblUserLocation"  Text="{Binding Location}" >
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding Email,Converter={StaticResource InvisibilityConverter}}">
+                    <TextBlock FontSize="22" Margin="10,0,50,0"  Text="Email" >
+                    </TextBlock>
+                    <TextBlock FontSize="22"   Text="{Binding Email}" >
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding Description,Converter={StaticResource InvisibilityConverter}}">
+                    <TextBlock FontSize="22" Margin="10,0,50,0"  Text="Description" >
+                    </TextBlock>
+                    <TextBlock FontSize="22" TextWrapping="Wrap" Margin="0,0,10,0"   Text="{Binding Description}" >
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding FollowersCount,Converter={StaticResource InvisibilityConverter}}">
+                    <TextBlock FontSize="22" Margin="10,0,50,0"  Text="Follower Count" >
+                    </TextBlock>
+                    <TextBlock FontSize="22" TextWrapping="Wrap"  Margin="0,0,10,0"  Text="{Binding FollowersCount}" >
+                    </TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Visibility="{Binding FriendsCount,Converter={StaticResource InvisibilityConverter}}">
+                    <TextBlock FontSize="22" Margin="10,0,50,0"  Text="Friend Count" >
+                    </TextBlock>
+                    <TextBlock FontSize="22" TextWrapping="Wrap" Margin="0,0,10,0"   Text="{Binding FriendsCount}" >
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarToggleButton Icon="Forward" Label="Post Tweet" Click="AppBarButton_Click" />
+            <AppBarToggleButton Icon="Go" Label="Search Tweet" Click="AppBarButton1_Click" />
+            <AppBarToggleButton Icon="List" Label="Friend List" Click="FriendList_Click" />
+            <AppBarToggleButton Label="Logout" Click="Logout_Click" Icon="Delete" />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
